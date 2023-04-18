@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/Leaf/static/js/main.e6479fd1.js",
+    "static/js/98.0a68bb11.js": "/Leaf/static/js/98.0a68bb11.js",
+    "static/media/MaterialCommunityIcons.ttf": "/Leaf/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
+    "favicon.ico": "/Leaf/favicon.ico",
+    "index.html": "/Leaf/index.html",
+    "favicon-32.png": "/Leaf/favicon-32.png",
+    "favicon-16.png": "/Leaf/favicon-16.png",
+    "serve.json": "/Leaf/serve.json",
+    "manifest.json": "/Leaf/manifest.json",
+    "main.e6479fd1.js.map": "/Leaf/static/js/main.e6479fd1.js.map",
+    "98.0a68bb11.js.map": "/Leaf/static/js/98.0a68bb11.js.map"
+  },
+  "entrypoints": [
+    "static/js/98.0a68bb11.js",
+    "static/js/main.e6479fd1.js"
+  ]
+}
