@@ -54,6 +54,27 @@ export const DrawerNavigator: React.FC<Props> = ({ stacks }) => {
     const [ drawerType, setDrawerType ] = useState(getDrawerType());
     const navigation = useNavigation();
 
+    // Internal state storing height and width properties of the window
+    const [windowSize, setWindowSize] = React.useState({ 
+        height: window.innerHeight,
+        width: window.innerWidth
+    });
+
+    React.useEffect(() =>  {
+        // Set new state for windowSize, containing height and width of window
+        const renderOnResize = () => {
+            setWindowSize({
+                height: window.innerHeight,
+                width: window.innerWidth
+            })
+        };
+        // Trigger setWindowSize() when resize is detected
+        window.addEventListener('resize', renderOnResize);
+
+        // Cleanup to avoid memory leaks
+        return _ => {window.removeEventListener('resize', renderOnResize)};
+    });
+
     // We only want to add the listener once, when the drawer is mounted
     useEffect(() => {
         const handleDimensionChange = () => {
