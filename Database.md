@@ -48,7 +48,6 @@ Adjust the code block and add it to a new file "firebaseConfig.js".
 
 > ```
 > import { initializeApp } from "firebase/app";
-> import { getAnalytics } from "firebase/analytics";
 > import { getFirestore } from "firebase/firestore";
 > 
 > // Firebase config
@@ -64,7 +63,6 @@ Adjust the code block and add it to a new file "firebaseConfig.js".
 > 
 > // Initialize Firebase
 > const app = initializeApp(firebaseConfig);
-> const analytics = getAnalytics(app);
 > export const db = getFirestore(app);
 > ```
 
