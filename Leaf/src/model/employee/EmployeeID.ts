@@ -2,6 +2,8 @@ import ID from "../core/ID";
 import UUID from "../core/UUID";
 
 class EmployeeID extends ID {
+    private static lastGeneratedID: number = 0;
+
     constructor(code: string) {
         // TODO: Validation
         super(code);
@@ -10,9 +12,19 @@ class EmployeeID extends ID {
     public static generate(): EmployeeID {
         // TODO: Implement actual generation
         const length = 6;
+        const maxJump = 5; //maximum jump interval
         const max = Math.pow(10, length) - 1;
-        const randomNum = Math.floor(Math.random() * (max + 1));
-        return new EmployeeID(randomNum.toString().padStart(length, "0"));
+
+        // take a random jump interval
+        const jump = Math.floor(Math.random() * maxJump) + 1;
+        // Calculate new ID with jump interval
+        EmployeeID.lastGeneratedID += jump;
+        // If max ID value is reached
+        if (EmployeeID.lastGeneratedID > max) {
+            //TODO: Do we need a way to solve this now?
+            throw new Error("You have reached the max EmployeeID value!");
+        }
+        return new EmployeeID(EmployeeID.lastGeneratedID.toString().padStart(length, "0"));
     }
 
     public matches(other: EmployeeID): boolean {
