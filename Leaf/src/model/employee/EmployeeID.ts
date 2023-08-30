@@ -10,7 +10,6 @@ class EmployeeID extends ID {
     }
 
     public static generate(): EmployeeID {
-        // TODO: Implement actual generation
         const length = 6;
         const maxJump = 5; //maximum jump interval
         const max = Math.pow(10, length) - 1;
