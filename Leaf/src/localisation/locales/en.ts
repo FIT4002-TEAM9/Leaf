@@ -237,4 +237,7 @@ export default {
     "error.incorrectPassword": "Incorrect password",
     "error.invalidDate": "Invalid date",
     "error.invalidTime": "Invalid time",
+
+    // Sequence
+    "sequence.documentName": "employeeIDSequences",
 };

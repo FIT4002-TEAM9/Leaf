@@ -22,6 +22,7 @@ import RolePicker from "../custom/RolePicker";
 import LeafColors from "../styling/LeafColors";
 import LeafTypography from "../styling/LeafTypography";
 import DefaultScreenContainer from "./containers/DefaultScreenContainer";
+import EmployeeID from "../../model/employee/EmployeeID";
 
 interface Props {
     navigation?: NavigationProp<ParamListBase>;
@@ -62,19 +63,19 @@ const NewAccountScreen: React.FC<Props> = ({ navigation }) => {
 
         let employee: Employee | null = null;
         if (role!.matches(Role.admin)) {
-            const newAdmin = Admin.new(name, surname);
+            const newAdmin = Admin.new(await EmployeeID.generate(), name, surname);
             const success = await Session.inst.submitNewAdmin(newAdmin);
             if (success) {
                 employee = newAdmin;
             }
         } else if (role!.matches(Role.worker)) {
-            const newWorker = Worker.new(name, surname, selectedHosptial!.value);
+            const newWorker = Worker.new(await EmployeeID.generate(), name, surname, selectedHosptial!.value);
             const success = await Session.inst.submitNewWorker(newWorker);
             if (success) {
                 employee = newWorker;
             }
         } else if (role!.matches(Role.leader)) {
-            const newLeader = Leader.new(name, surname, selectedHosptial!.value);
+            const newLeader = Leader.new(await EmployeeID.generate(), name, surname, selectedHosptial!.value);
             const success = await Session.inst.submitNewLeader(newLeader);
             if (success) {
                 employee = newLeader;

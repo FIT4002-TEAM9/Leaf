@@ -21,8 +21,8 @@ class Worker extends Employee {
         this._allocatedPatients = allocatedPatients;
     }
 
-    public static new(firstName: string, lastName: string, hospital: Hospital | null): Worker {
-        return new Worker(EmployeeID.generate(), firstName, lastName, null, hospital, false, []);
+    public static new(id: EmployeeID, firstName: string, lastName: string, hospital: Hospital | null): Worker {
+        return new Worker(id, firstName, lastName, null, hospital, false, []);
     }
 
     get allocatedPatients(): MRN[] {

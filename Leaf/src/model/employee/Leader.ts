@@ -6,8 +6,8 @@ import { Role } from "./Role";
 class Leader extends Employee {
     public readonly role: Role = Role.leader;
 
-    public static new(firstName: string, lastName: string, hospital: Hospital | null): Leader {
-        return new Leader(EmployeeID.generate(), firstName, lastName, null, hospital, false);
+    public static new(id: EmployeeID, firstName: string, lastName: string, hospital: Hospital | null): Leader {
+        return new Leader(id, firstName, lastName, null, hospital, false);
     }
 }
 
