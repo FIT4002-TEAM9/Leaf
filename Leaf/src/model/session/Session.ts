@@ -67,7 +67,7 @@ class Session {
             // If we are calling this when no one is logged in, something is seriously wrong
             // Just bail - logout and return a dummy account
             StateManager.loginStatus.publish(LoginStatus.LoggedOut);
-            return Worker.new(new EmployeeID((EmployeeID.generate()).toString()), "", "", null);
+            return Worker.new(new EmployeeID(""), "", "", null);
         }
         return this._loggedInAccount;
     }
