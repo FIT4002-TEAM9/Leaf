@@ -46,11 +46,41 @@ describe("TriageCode", () => {
         const semiUrgentSteps = semiUrgent.getSteps();
         const nonUrgentSteps = nonUrgent.getSteps();
 
-        expect(immediateSteps).toEqual(expect.arrayContaining(["Step 1", "Step 2", "Step 3", "Step 4"]));
-        expect(emergencySteps).toEqual(expect.arrayContaining(["Step 1", "Step 2", "Step 3", "Step 4"]));
-        expect(urgentSteps).toEqual(expect.arrayContaining(["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]));
-        expect(semiUrgentSteps).toEqual(expect.arrayContaining(["Step 1", "Step 2", "Step 3"]));
-        expect(nonUrgentSteps).toEqual(expect.arrayContaining(["Step 1", "Step 2"]));
+        expect(immediateSteps).toEqual(
+            expect.arrayContaining([
+                strings("triageCodeSteps.immediate.1"),
+                strings("triageCodeSteps.immediate.2"),
+                strings("triageCodeSteps.immediate.3"),
+                strings("triageCodeSteps.immediate.4"),
+            ]),
+        );
+        expect(emergencySteps).toEqual(
+            expect.arrayContaining([
+                strings("triageCodeSteps.emergency.1"),
+                strings("triageCodeSteps.emergency.2"),
+                strings("triageCodeSteps.emergency.3"),
+                strings("triageCodeSteps.emergency.4", TriageCode.immediate.code.toString()),
+            ]),
+        );
+        expect(urgentSteps).toEqual(
+            expect.arrayContaining([
+                strings("triageCodeSteps.urgent.1"),
+                strings("triageCodeSteps.urgent.2"),
+                strings("triageCodeSteps.urgent.3"),
+                strings("triageCodeSteps.urgent.4"),
+                strings("triageCodeSteps.urgent.5"),
+            ]),
+        );
+        expect(semiUrgentSteps).toEqual(
+            expect.arrayContaining([
+                strings("triageCodeSteps.semiUrgent.1"),
+                strings("triageCodeSteps.semiUrgent.2"),
+                strings("triageCodeSteps.semiUrgent.3"),
+            ]),
+        );
+        expect(nonUrgentSteps).toEqual(
+            expect.arrayContaining([strings("triageCodeSteps.nonUrgent.1"), strings("triageCodeSteps.nonUrgent.2")]),
+        );
     });
 
     it("should handle unknown TriageCode", () => {
