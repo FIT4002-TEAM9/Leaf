@@ -17,10 +17,10 @@ const testArrivalWard = new Ward("TestArrivalWardID", "TestHospitalCode", "TestA
 const testTriageCode = TriageCode.immediate;
 const triageCase = TriageCase.new(testArrivalWard, testHospital, testMedicalUnit, "Test Triage Text", testTriageCode);
 const patientChangelog = PatientChangelog.new();
+const worker = Worker.new("John", "Doe", null); // Create a worker instance
 
 describe("Worker Class", () => {
     it("should create a new Worker instance", () => {
-        const worker = Worker.new("John", "Doe", null); // Create a worker instance
 
         expect(worker).toBeInstanceOf(Worker);
         expect(worker.id).toBeInstanceOf(EmployeeID);
@@ -31,6 +31,8 @@ describe("Worker Class", () => {
         expect(worker.accountActivated).toBe(false);
         expect(worker.allocatedPatients).toEqual([]);
         expect(worker.role).toBe(Role.worker);
+
+        expect(worker.fullName).toBe("John Doe");
     });
 
     it("should allocate a patient to the worker", () => {
@@ -54,5 +56,30 @@ describe("Worker Class", () => {
         worker.allocatePatient(patient);
 
         expect(worker.allocatedPatients).toContain(patientMRN);
+    });
+
+    // For Employee.ts
+    it("should set email for the worker", () => {
+        const email = "test@gmail.com"
+        worker.setEmail(email);
+        expect(worker.email).toBe(email);
+    });
+
+    it("should set hospital for the worker", () => {
+        const setHospital = new Hospital("TestHospitalID", "TestHospitalCode", "TestHospitalName");
+        worker.setHosptial(setHospital);
+        expect(worker.currentHospital).toBe(setHospital);
+    });
+
+    it("should activate account for the worker", () => {
+        worker.setAccountActivated(false);
+        expect(worker.accountActivated).toBe(false);
+        worker.setAccountActivated(true);
+        expect(worker.accountActivated).toBe(true);
+    });
+
+    // For EmployeeID.ts
+    it("should match the ID for the worker", () => {
+        worker.id.matches(worker.id);
     });
 });
