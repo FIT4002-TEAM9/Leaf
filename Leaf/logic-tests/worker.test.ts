@@ -21,7 +21,6 @@ const worker = Worker.new("John", "Doe", null); // Create a worker instance
 
 describe("Worker Class", () => {
     it("should create a new Worker instance", () => {
-
         expect(worker).toBeInstanceOf(Worker);
         expect(worker.id).toBeInstanceOf(EmployeeID);
         expect(worker.firstName).toBe("John");
@@ -60,7 +59,7 @@ describe("Worker Class", () => {
 
     // For Employee.ts
     it("should set email for the worker", () => {
-        const email = "test@gmail.com"
+        const email = "test@gmail.com";
         worker.setEmail(email);
         expect(worker.email).toBe(email);
     });
