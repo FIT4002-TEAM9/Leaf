@@ -3,5 +3,5 @@
         "strict": true,
         "noEmitOnError": true
     },
-    "extends": "expo/tsconfig.base"
+    // "extends": "expo/tsconfig.base"
 }
