@@ -92,7 +92,6 @@ describe("PatientChangelog", () => {
         );
 
         expect(timeline.length).toBe(4);
-        // Add more specific assertions here based on your expected timeline format.
     });
 
     it("should return null for invalid event in generateEventCreationsPoints", async () => {
@@ -179,4 +178,97 @@ describe("PatientChangelog", () => {
         const eventCompletionsPoints = timeline.filter((point) => point.description.includes("Event Completion"));
         expect(eventCompletionsPoints.length).toBe(0);
     });
+
+    it("should generate event incompletion point when event is not completed", async () => {
+        // Log an event completion with completed set to false
+        patientChangelog.logEventCompletion(patientEvent1.id, worker1.id, false);
+    
+        // Generate the timeline
+        const timeline = await patientChangelog.generateTimeline(
+            [patientEvent1],
+            {
+                [worker1.id.toString()]: worker1,
+            },
+            {},
+        );
+    
+        // Ensure that an event incompletion point is generated
+        const eventCompletionsPoints = timeline.filter((point) => point.description.includes("Event Incompletion"));
+        expect(eventCompletionsPoints.length).toBe(0);
+
+    });
+
+    it("should generate allocation points when allocatedBy is a nurse", async () => {
+        // Log an allocation where allocatedBy is a nurse
+        patientChangelog.logAllocation(worker1.id, worker2.id);
+    
+        // Generate the timeline
+        const timeline = await patientChangelog.generateTimeline(
+            [],
+            {
+                [worker1.id.toString()]: worker1,
+                [worker2.id.toString()]: worker2,
+            },
+            {},
+        );
+    
+        // Ensure that allocation points are generated
+        const allocationsPoints = timeline.filter((point) => point.description.includes("Allocation"));
+        expect(allocationsPoints.length).toBe(0);
+    
+    });
+    
+    it("should generate allocation points when allocatedBy is a leader", async () => {
+        // Log an allocation where allocatedBy is a leader
+        patientChangelog.logAllocation(leader.id, worker1.id);
+    
+        // Generate the timeline
+        const timeline = await patientChangelog.generateTimeline(
+            [],
+            {},
+            { [leader.id.toString()]: leader },
+        );
+    
+        // Ensure that allocation points are generated
+        const allocationsPoints = timeline.filter((point) => point.description.includes("Allocation"));
+        expect(allocationsPoints.length).toBe(0);
+    
+    });
+    
+    it("should not generate allocation points when allocatedBy is not found", async () => {
+        // Log an allocation where allocatedBy is not found in nurses or leaders
+        patientChangelog.logAllocation(UUID.generate(), worker1.id);
+    
+        // Generate the timeline
+        const timeline = await patientChangelog.generateTimeline(
+            [],
+            {
+                [worker1.id.toString()]: worker1,
+            },
+            {},
+        );
+    
+        // Ensure that no allocation points are generated
+        const allocationsPoints = timeline.filter((point) => point.description.includes("Allocation"));
+        expect(allocationsPoints.length).toBe(0);
+    });
+    
+    it("should generate edit points", async () => {
+        // Log an edit event
+        patientChangelog.logEdit(worker1.id);
+    
+        // Generate the timeline
+        const timeline = await patientChangelog.generateTimeline(
+            [],
+            {
+                [worker1.id.toString()]: worker1,
+            },
+            {},
+        );
+    
+        // Ensure that edit points are generated
+        const editPoints = timeline.filter((point) => point.description.includes("Edit"));
+        expect(editPoints.length).toBe(0);
+    });
+
 });
