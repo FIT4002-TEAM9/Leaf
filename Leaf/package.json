@@ -12,10 +12,7 @@
         "predeploy": "expo export:web",
         "lint": "eslint . --ext .ts,.tsx",
         "prune": "ts-prune",
-        "type-check": "tsc --noEmit",
-        "test": "jest",
-        "test:watch": "jest --watch",
-        "test:update": "jest --updateSnapshot"
+        "type-check": "tsc --noEmit"
     },
     "dependencies": {
         "@expo/webpack-config": "^18.0.1",
@@ -62,7 +59,6 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-native": "^4.0.0",
         "gh-pages": "^5.0.0",
-        "jest": "^29.7.0",
         "prettier": "3.0.0",
         "ts-prune": "^0.10.3"
     },
