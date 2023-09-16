@@ -29,4 +29,4 @@ describe("Admin Manager", () => {
         const deletePromise = await DatabaseSession.inst.delete(DatabaseCollection.Admins, admin.id.toString()); // Delete entry from database
         expect(deletePromise).toBe(true);
     });
-})
+});

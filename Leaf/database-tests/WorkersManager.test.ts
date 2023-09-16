@@ -15,7 +15,7 @@ describe("Worker Manager", () => {
         const testPromise = await NewEmployeeManager.inst.newWorkerCreated(worker); // Insert Worker to the database
 
         expect(testPromise).toBe(true); // Check if insert successful
-    })
+    });
 
     it("should retrieve a Worker from the database", async () => {
         const retrievedWorker = await WorkersManager.inst.getWorker(worker.id); // Retrieve worker from the database
@@ -24,10 +24,10 @@ describe("Worker Manager", () => {
             expect(retrievedWorker.id).toEqual(worker.id); // Check if retrieved worker id matches expected worker id
             expect(retrievedWorker.fullName).toEqual(worker.fullName); // Check if retrieved worker name matches expected worker name
         }
-    })
+    });
 
     it("should delete a Worker from the database", async () => {
         const deletePromise = await DatabaseSession.inst.delete(DatabaseCollection.Workers, worker.id.toString()); // Delete entry from database
         expect(deletePromise).toBe(true); // Check if successfully deleted
-    })
-})
+    });
+});
