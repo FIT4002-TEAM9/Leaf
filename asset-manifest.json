@@ -1,24 +1,33 @@
 {
   "files": {
-    "main.js": "/Leaf/static/js/main.a15c2af9.js",
-    "static/js/448.3c4f4617.js": "/Leaf/static/js/448.3c4f4617.js",
+    "main.js": "/Leaf/static/js/main.a6c9560c.js",
+    "static/js/114.aee2da08.js": "/Leaf/static/js/114.aee2da08.js",
     "static/media/MaterialCommunityIcons.ttf": "/Leaf/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/Poppins-MediumItalic.ttf": "/Leaf/static/media/Poppins-MediumItalic.89e040c6a64d18f620dc.ttf",
+    "static/media/Poppins-SemiBoldItalic.ttf": "/Leaf/static/media/Poppins-SemiBoldItalic.3524ffc3226f4578e5c5.ttf",
     "static/media/Poppins-BoldItalic.ttf": "/Leaf/static/media/Poppins-BoldItalic.cfb635a5111b545f5598.ttf",
     "static/media/Poppins-Medium.ttf": "/Leaf/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/Leaf/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/Leaf/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/CircularStd-BlackItalic.otf": "/Leaf/static/media/CircularStd-BlackItalic.e1f3943738ef431efb3e.otf",
+    "static/media/CircularStd-Black.otf": "/Leaf/static/media/CircularStd-Black.757b8ac8efa71be3fcd0.otf",
+    "static/media/CircularStd-Bold.otf": "/Leaf/static/media/CircularStd-Bold.5c4514a8399ec0064b9b.otf",
+    "static/media/CircularStd-Medium.otf": "/Leaf/static/media/CircularStd-Medium.9ffafeddf192e8c8a111.otf",
+    "static/media/CircularStd-BoldItalic.otf": "/Leaf/static/media/CircularStd-BoldItalic.c1293725acde0dffc47e.otf",
+    "static/media/CircularStd-MediumItalic.otf": "/Leaf/static/media/CircularStd-MediumItalic.55bf23ce572de9d28b4e.otf",
     "static/media/Gilroy-ExtraBold.otf": "/Leaf/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
+    "static/media/test.jpg": "/Leaf/static/media/test.a8d5774fe4ff9b0173e5.jpg",
     "favicon.ico": "/Leaf/favicon.ico",
     "index.html": "/Leaf/index.html",
     "favicon-32.png": "/Leaf/favicon-32.png",
     "favicon-16.png": "/Leaf/favicon-16.png",
     "serve.json": "/Leaf/serve.json",
     "manifest.json": "/Leaf/manifest.json",
-    "main.a15c2af9.js.map": "/Leaf/static/js/main.a15c2af9.js.map",
-    "448.3c4f4617.js.map": "/Leaf/static/js/448.3c4f4617.js.map"
+    "main.a6c9560c.js.map": "/Leaf/static/js/main.a6c9560c.js.map",
+    "114.aee2da08.js.map": "/Leaf/static/js/114.aee2da08.js.map"
   },
   "entrypoints": [
-    "static/js/448.3c4f4617.js",
-    "static/js/main.a15c2af9.js"
+    "static/js/114.aee2da08.js",
+    "static/js/main.a6c9560c.js"
   ]
 }
