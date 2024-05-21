@@ -129,6 +129,7 @@ const LeafPasswordInput: React.FC<Props> = ({
                     icon={isPasswordShown ? "eye" : "eye-off"}
                     size={LeafIconSize.Small}
                     color={LeafColors.shadow}
+                    onPress={() => setIsPasswordShown(!isPasswordShown)}
                 />
             </TouchableOpacity>
         </View>

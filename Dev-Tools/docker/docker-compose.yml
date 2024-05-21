@@ -1,0 +1,9 @@
+services:
+  leaf-etl:
+    image: "leaf-etl"
+    container_name: "leaf-etl"
+    environment:
+      ENV: "dev"
+    ports:
+      - "5000:5000"
+    restart: unless-stopped

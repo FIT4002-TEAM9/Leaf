@@ -15,10 +15,19 @@ If you're an onboarding developer, read the [onboarding documentation](Onboardin
 2. Clone the repository in your local directory
 
 ```
-$ git clone https://github.com/FIT4002-TEAM9/Leaf.git
+$ git clone https://github.com/FIT4002-Group8/Leaf-V2.git
 ```
 
 2. Open the project directory and run `npm install`
+
+## Running Leaf-ETL service
+For the ETL aspect of the application, we use a separate python service. This service can be started locally by:
+
+1. Ensuring that Docker is installed on your device
+2. Running the start script at ./Dev-Tools/start.sh
+   1. This will build the Leaf-ETL docker container and start it
+3. Stop the service by running ./Dev-Tools/stop.sh to spin down the Docker container
+4. Restart the service (to load in new changes) by running ./Dev-Tools/restart.sh
 
 ## Running on Simulator
 

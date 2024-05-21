@@ -28,6 +28,7 @@ export default {
     "tabBar.admin.leaders": "Leaders",
     "tabBar.admin.new": "New",
     "tabBar.admin.export": "Export",
+    "tabBar.admin.fileHistory": "File History",
 
     // Leader Tab Bar
     "tabBar.leader.viewNurses": "Nurses",
@@ -51,6 +52,7 @@ export default {
     "header.admin.viewLeaders": "Leaders",
     "header.admin.newAccount": "New Account",
     "header.admin.exportPatient": "Export Patient",
+    "header.admin.fileHistory": "File History",
 
     // Leader Headers
     "header.leader.viewNurses": "Nurses",
@@ -73,6 +75,9 @@ export default {
     "button.deleteAccount": "Remove Account",
     "button.createAccount": "Create Account",
     "button.viewPatient": "View",
+    "button.fullReport": "Full Report",
+    "button.quickReport": "Quick Report",
+    "button.customReport": "Custom Report",
     "button.patientActions": "Actions",
     "button.editPatient": "Edit",
     "button.morning": "Morning",
@@ -93,6 +98,7 @@ export default {
     "button.submit": "Submit",
     "button.addEvent": "Add Event",
     "button.exportPatient": "Export Patient",
+    "button.fileHistory": "File History",
     "button.resetPassword": "Forgot Password?",
     "button.reset": "Reset",
     "button.changelog": "Changelog",
@@ -118,6 +124,9 @@ export default {
     "label.loading": "Loading",
     "label.details": "Details",
     "label.viewPatient": "View patient information and medical history.",
+    "label.fullReport": "Generate a report with all the patient data (OMOP CDM).",
+    "label.quickReport": "Generate a summarised report of the patient data.",
+    "label.customReport": "Generate a customised report of the patient data.",
     "label.patientActions": "View immediate actions relevant to triage.",
     "label.editPatient": "Edit patient information and triage.",
     "label.removePatient": "Delete patient from the system.",
@@ -146,6 +155,8 @@ export default {
     "label.triageCode2Param": "CODE {0}  •  {1}",
     "label.removeAccountWarning": "Are you sure you want to remove this account? This action is irreversible.",
     "label.createdAt1Param": "Created {0}",
+    "label.noReportSelected": "No Report Selected",
+    "label.reportSelected": "Report Selected",
 
     // Input Labels
     "inputLabel.username": "Username",
@@ -176,12 +187,15 @@ export default {
     "inputLabel.description": "Description",
     "inputLabel.triggerTime": "Trigger Time",
     "inputLabel.category": "Category",
+    "inputLabel.assignedTo": "Assigned To",
 
     // Triage Form
     "triageForm.title.identity": "Patient Identity",
     "triageForm.title.triage": "Triage",
     "triageForm.title.hospitalisation": "Hospitalisation",
     "triageForm.title.end": "End of Form",
+    "triageForm.title.reportFilter": "Report Filters",
+    "triageForm.title.reportType": "Report Type",
 
     // Patient History
     "patientHistory.title.identity": "Identity",
@@ -333,4 +347,6 @@ export default {
     "feedback.failDeleteNurseAccount": "Nurse has patient(s) assigned",
     "feedback.successExportPatient": "Patient exported",
     "feedback.updatedPassword": "Password updated",
+    "feedback.successExportReport": "Report Exported",
+    "feedback.successDownloadReport": "Report Downloaded",
 };

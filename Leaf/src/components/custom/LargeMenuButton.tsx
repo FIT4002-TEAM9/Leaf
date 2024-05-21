@@ -1,4 +1,4 @@
-import { StyleProp, View, ViewStyle } from "react-native";
+import {View} from "react-native";
 import Environment from "../../state/environment/Environment";
 import { OS } from "../../state/environment/types/OS";
 import LeafIcon from "../base/LeafIcon/LeafIcon";

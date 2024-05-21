@@ -66,7 +66,7 @@ function LeafSearchBar<T>({
                 icon="magnify"
                 size={26}
                 color={LeafColors.textDark}
-                style={{ alignSelf: "center", display: "flex", marginLeft: 16 }}
+                style={{ alignSelf: "center", display: "flex", marginTop: 14, marginLeft: 16 }}
             />
 
             <TouchableWithoutFeedback
