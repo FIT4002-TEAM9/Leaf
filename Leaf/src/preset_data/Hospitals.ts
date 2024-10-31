@@ -81,10 +81,7 @@ hospitalB.addMedUnit("M20", new MedicalUnit("M20", "Orthopaedic Surgery 1 STB", 
 hospitalB.addMedUnit("M21", new MedicalUnit("M21", "Gen Surg A STB", "Surgery"));
 hospitalB.addMedUnit("M22", new MedicalUnit("M22", "Gen Surg D STB", "Surgery"));
 hospitalB.addMedUnit("M23", new MedicalUnit("M23", "Obs & Gynae STB", "Women & Children"));
-hospitalB.addMedUnit(
-    "M24",
-    new MedicalUnit("M24", "Psych - Adult Upton House STB", "Mental Health/Turning Point/Alcohol&Drug"),
-);
+hospitalB.addMedUnit("M24", new MedicalUnit("M24", "Psych - Adult Upton House STB", "Mental Health/Turning Point/Alcohol&Drug"));
 hospitalB.addMedUnit("M25", new MedicalUnit("M25", "Endocrinology STB", "Speciality Medicine"));
 hospitalB.addMedUnit("M26", new MedicalUnit("M26", "Haemostasis/Thromb/Lymphoma STB", "Speciality Medicine"));
 hospitalB.addMedUnit("M27", new MedicalUnit("M27", "Vascular Surgery STB", "Surgery"));

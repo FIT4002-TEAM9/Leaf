@@ -49,6 +49,9 @@ class StateManager {
     // Notifies when patients are done async fetching and can be retrieved from Session
     public static readonly patientsFetched = new LeafPublisher();
 
+    // Notifies when files are done async fetching and can be retrieved from Session
+    public static readonly filesFetched = new LeafPublisher();
+
     // Notifies when the active patient has changed so components can update
     public static readonly activePatientChanged = new LeafPublisher();
 

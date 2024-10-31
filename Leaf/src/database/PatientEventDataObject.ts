@@ -1,6 +1,6 @@
 import UUID from "../model/core/UUID";
 import PatientEvent from "../model/patient/PatientEvent";
-import { PatientEventCategory } from "../model/patient/PatientEventCategory";
+import { PatientEventCategories, PatientEventCategory } from "../model/patient/PatientEventCategory";
 import DataObject from "./DataObject";
 
 export enum PatientEventField {
@@ -11,6 +11,7 @@ export enum PatientEventField {
     Description = "description",
     Category = "category",
     LastCompleted = "lastCompleted",
+    EventData = "eventData",
 }
 
 class PatientEventDataObject {
@@ -22,7 +23,8 @@ class PatientEventDataObject {
             .addString(PatientEventField.Title, event.title)
             .addString(PatientEventField.Description, event.description)
             .addString(PatientEventField.Category, event.category.id)
-            .addDate(PatientEventField.LastCompleted, event.lastCompleted);
+            .addDate(PatientEventField.LastCompleted, event.lastCompleted)
+            .addString(PatientEventField.EventData, event.eventData);
     }
 
     public static restore(data: DataObject): PatientEvent | null {
@@ -33,6 +35,7 @@ class PatientEventDataObject {
         const description = data.getStringOrNull(PatientEventField.Description);
         const category = data.getStringOrNull(PatientEventField.Category);
         const lastCompleted = data.getDateOrNull(PatientEventField.LastCompleted);
+        const eventData = data.getString(PatientEventField.EventData);
         if (!id || !createdAt || !triggerTime || !title || !description || !category || lastCompleted == null) {
             console.error("[PatientEventDataObject] Failed to restore PatientEvent");
             return null;
@@ -43,8 +46,9 @@ class PatientEventDataObject {
             triggerTime,
             title,
             description,
-            new PatientEventCategory(category),
+            new PatientEventCategory(category as PatientEventCategories),
             lastCompleted,
+            eventData,
         );
     }
 }

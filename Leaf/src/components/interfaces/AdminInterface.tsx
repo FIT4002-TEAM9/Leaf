@@ -6,6 +6,7 @@ import AllNursesScreen from "../screens/AllNursesScreen";
 import AllLeadersScreen from "../screens/AllLeadersScreen";
 import NewAccountScreen from "../screens/NewAccountScreen";
 import ExportPatientScreen from "../screens/ExportPatientScreen";
+import FileHistoryScreen from "../screens/FileHistoryScreen";
 
 export const AdminInterface = new LeafInterface()
     .addSection(
@@ -83,4 +84,29 @@ export const AdminInterface = new LeafInterface()
             "file-export",
             "file-export-outline",
         ),
-    );
+    )
+    .addSection(
+            new LeafInterfaceSection(
+                strings("tabBar.admin.fileHistory"), // Localized title for the section
+                () => {
+                    // Tab bar
+                    NavigationSession.inst.navigateTo(
+                        FileHistoryScreen, // Navigate to fileHistoryScreen
+                        undefined,
+                        strings("header.admin.fileHistory") // Localized header title
+                    );
+                    NavigationSession.inst.setSidebarComponent(undefined, undefined);
+                },
+                () => {
+                    // Drawer
+                    NavigationSession.inst.navigateTo(
+                        FileHistoryScreen, // Navigate to fileHistoryScreen
+                        undefined,
+                        strings("header.admin.fileHistory") // Localized header title
+                    );
+                    NavigationSession.inst.setSidebarComponent(undefined, undefined); // Clear sidebar component
+                },
+                "history", // Icon for the selected state (you can use any suitable icon)
+                "history" // Icon for the unselected state
+            )
+        );

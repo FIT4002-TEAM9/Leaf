@@ -9,6 +9,7 @@ import LeafText from "../LeafText/LeafText";
 import StateManager from "../../../state/publishers/StateManager";
 import LeafIcon from "../LeafIcon/LeafIcon";
 import { LeafIconSize } from "../LeafIcon/LeafIconSize";
+import {strings} from "../../../localisation/Strings";
 
 interface Props {
     label: string;
@@ -80,7 +81,7 @@ const LeafPasswordInputShort: React.FC<Props> = ({
                     }}
                 >
                     <LeafText typography={labelTypography} style={{ color: labelColor }}>
-                        {label}
+                        {strings("inputLabel.password")}
                     </LeafText>
 
                     <TextInput
@@ -120,6 +121,7 @@ const LeafPasswordInputShort: React.FC<Props> = ({
                     icon={isPasswordShown ? "eye" : "eye-off"}
                     size={LeafIconSize.Small}
                     color={LeafColors.shadow}
+                    onPress={() => setIsPasswordShown(!isPasswordShown)}
                 />
             </TouchableOpacity>
         </View>

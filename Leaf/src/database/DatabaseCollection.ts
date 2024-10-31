@@ -4,4 +4,5 @@ export enum DatabaseCollection {
     Workers = "workers",
     Admins = "admins",
     Accounts = "accounts",
+    Files = "files"
 }

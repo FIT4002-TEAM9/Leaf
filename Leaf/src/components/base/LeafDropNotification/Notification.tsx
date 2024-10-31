@@ -60,6 +60,7 @@ const Notification: React.FC<NotificationProps> = ({
     return (
         <Animated.View
             style={[
+                // eslint-disable-next-line react-native/no-color-literals
                 {
                     backgroundColor: "transparent",
                     marginTop: insets.top,

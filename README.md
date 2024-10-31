@@ -1,13 +1,15 @@
 # Leaf
 A multi-platform mental health triage application. [Project Page](https://www.monash.edu/it/humanise-lab/research/development-of-mental-health-triage-app-for-clinician).
 
-* [SHORT DEMO LINK](https://www.youtube.com/watch?v=ijm6Z6KCtdk)
+* [SHORT DEMO LINK - Leaf](https://www.youtube.com/watch?v=ijm6Z6KCtdk)
 
-* [FULL DEMO LINK](https://www.youtube.com/watch?v=rj6vawIVE68)
+* [FULL DEMO LINK - Leaf](https://www.youtube.com/watch?v=rj6vawIVE68)
+
+* [DEMO LINK - Leaf ETL](https://drive.google.com/file/d/12c4VC7R5pgfFBPhCHFNcN8STP1FjQ7mO/view?usp=drive_link)
 
 View the app's storyboard in **Storyboard (Tablet).pdf**, and familiarise yourself with the app's tablet navigation and layout versus the app's mobile navigation and layout in **Tablet vs Mobile Navigation and Layout.pdf**.
 
-If you're an onboarding developer, read the [onboarding documentation](Onboarding.md).
+If you're an onboarding developer, read the [Leaf onboarding documentation](Onboarding.md) and the [Leaf ETL onboarding documentation](https://docs.google.com/document/d/1FDcgizcvdFYHb_5GTNBORbtr1-CVW7_VH_CDqsdTapc/edit?tab=t.0).
 
 ## Setup
 
@@ -15,10 +17,24 @@ If you're an onboarding developer, read the [onboarding documentation](Onboardin
 2. Clone the repository in your local directory
 
 ```
-$ git clone https://github.com/FIT4002-TEAM9/Leaf.git
+$ git clone https://github.com/FIT4002-Group8/Leaf-V2.git
 ```
 
 2. Open the project directory and run `npm install`
+
+## Running Leaf-ETL service
+For the ETL aspect of the application, we use a separate python service. This service can be started locally by:
+
+1. Ensuring that Docker is installed on your device
+2. Running the start script at ./Dev-Tools/start.sh
+   1. This will build the Leaf-ETL Python & Postgres docker containers and start them
+3. Stop the service by running ./Dev-Tools/stop.sh to spin down the Docker container
+4. Restart the service (to load in new changes) by running ./Dev-Tools/restart.sh
+
+### Working with Postgres
+Start up just the database by running the ./Dev-Tools/start_database.sh script
+
+To add schemas and sample data to the database, add SQL scripts to ./Leaf-ETL/postgres/data
 
 ## Running on Simulator
 

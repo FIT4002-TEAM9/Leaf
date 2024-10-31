@@ -1,15 +1,18 @@
 class DataObject {
     // The JSON this wrapper represents
     private json: { [key: string]: any } = {};
+
     // Public accessor to data
     public get data(): { [key: string]: any } {
         return this.json;
     }
+
     public get str(): string {
         return JSON.stringify(this.json);
     }
 
-    constructor() {}
+    constructor() {
+    }
 
     public static fromJSON(json: { [key: string]: any }): DataObject {
         const dataObject = new DataObject();
@@ -257,9 +260,21 @@ class DataObject {
         if (retrieval === undefined || !Array.isArray(retrieval)) {
             return [];
         }
-        return retrieval.map((json) => {
-            return DataObject.fromJSON(json);
-        });
+        return retrieval.map((json) => DataObject.fromJSON(json));
+    }
+
+    public getObjectOrNull<T>(key: string, legacyKeys: string[] = []): T | null {
+        let retrieval = this.json[key];
+        for (const legacyKey of legacyKeys) {
+            if (retrieval !== undefined) {
+                break;
+            }
+            retrieval = this.json[legacyKey];
+        }
+        if (retrieval === undefined || typeof retrieval !== "object" || retrieval === null) {
+            return null;
+        }
+        return retrieval as T;
     }
 }
 

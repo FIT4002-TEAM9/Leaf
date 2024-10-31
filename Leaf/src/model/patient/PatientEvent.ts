@@ -8,6 +8,7 @@ class PatientEvent {
     public readonly title: string;
     public readonly description: string;
     public readonly category: PatientEventCategory;
+    public readonly eventData: string;
     private _lastCompleted: Date;
     public get lastCompleted(): Date {
         return this._lastCompleted;
@@ -42,6 +43,7 @@ class PatientEvent {
         description: string,
         category: PatientEventCategory,
         lastCompleted: Date,
+        eventData: string
     ) {
         this.id = id;
         this.createdAt = createdAt;
@@ -50,6 +52,7 @@ class PatientEvent {
         this.description = description;
         this.category = category;
         this._lastCompleted = lastCompleted;
+        this.eventData = eventData;
     }
 
     public static new(
@@ -57,8 +60,9 @@ class PatientEvent {
         title: string,
         description: string,
         category: PatientEventCategory,
+        eventData: string,
     ): PatientEvent {
-        return new PatientEvent(UUID.generate(), new Date(), triggerTime, title, description, category, new Date(0));
+        return new PatientEvent(UUID.generate(), new Date(), triggerTime, title, description, category, new Date(0), eventData);
     }
 
     public markCompleted() {
